@@ -1,0 +1,11 @@
+# data + model artifacts (regenerate with the scripts)
+data/raw/
+data/processed/
+models/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+
+# keep the mlb subproject's dataset + accumulated logs tracked (needed by the model
+# and by the daily book-capture history) -- do NOT ignore mlb/data or mlb/pp_logs

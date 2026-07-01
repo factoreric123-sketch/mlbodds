@@ -1,0 +1,14 @@
+date,stat,pitcher,opp,line,home,mu,side,p_hit,conf,n_prior,actual,leg_result
+2026-06-30,ks,Bryan Woo,Los Angeles Angels,7.5,1,5.95,LESS,0.751,0.251,16,5,win
+2026-06-30,ks,Cristopher Sánchez,Pittsburgh Pirates,7.5,1,6.25,LESS,0.71,0.21,17,9,loss
+2026-06-30,ks,Joe Ryan,Houston Astros,7.0,0,6.37,LESS,0.692,0.192,17,5,win
+2026-06-30,ks,Justin Wrobleski,Athletics,5.0,0,4.62,LESS,0.683,0.183,13,11,loss
+2026-06-30,ks,Cam Schlittler,Detroit Tigers,7.5,1,6.65,LESS,0.65,0.15,17,5,win
+2026-06-30,ks,Jeffrey Springs,Los Angeles Dodgers,4.0,1,5.24,MORE,0.601,0.101,17,2,loss
+2026-06-30,ks,Jacob deGrom,Cleveland Guardians,6.5,0,6.12,LESS,0.587,0.087,16,9,loss
+2026-06-30,ks,Tanner Bibee,Texas Rangers,5.0,1,5.2,LESS,0.582,0.082,17,2,win
+2026-06-30,ks,Kevin Gausman,New York Mets,5.5,1,5.3,LESS,0.564,0.064,17,7,loss
+2026-06-30,ks,Nolan McLean,Toronto Blue Jays,5.5,0,5.89,MORE,0.536,0.036,16,7,win
+2026-06-30,ks,José Soriano,Seattle Mariners,5.5,0,5.52,LESS,0.525,0.025,17,9,loss
+2026-06-30,ks,Landen Roupp,Arizona Diamondbacks,5.0,0,5.53,LESS,0.523,0.023,16,4,win
+2026-06-30,ks,Connelly Early,Washington Nationals,5.5,1,5.71,MORE,0.507,0.007,16,5,loss

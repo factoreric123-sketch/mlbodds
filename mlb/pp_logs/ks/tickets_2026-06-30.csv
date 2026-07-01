@@ -1,0 +1,5 @@
+date,n_legs,type,stake,legs,avg_p,ev_per_1,exp_return,n_correct,payout_mult,payout,ticket_result
+2026-06-30,3,Flex,20.0,Bryan Woo LESS 7.5; Cristopher Sánchez LESS 7.5; Joe Ryan LESS 7.0,0.718,1.544,30.88,2,1.0,20.0,refund
+2026-06-30,4,Flex,20.0,Bryan Woo LESS 7.5; Cristopher Sánchez LESS 7.5; Joe Ryan LESS 7.0; Justin Wrobleski LESS 5.0,0.709,2.136,42.71,2,0.0,0.0,loss
+2026-06-30,5,Flex,20.0,Bryan Woo LESS 7.5; Cristopher Sánchez LESS 7.5; Joe Ryan LESS 7.0; Justin Wrobleski LESS 5.0; Cam Schlittler LESS 7.5,0.697,2.48,49.59,3,0.4,8.0,loss
+2026-06-30,6,Flex,20.0,Bryan Woo LESS 7.5; Cristopher Sánchez LESS 7.5; Joe Ryan LESS 7.0; Justin Wrobleski LESS 5.0; Cam Schlittler LESS 7.5; Jeffrey Springs MORE 4.0,0.681,3.45,69.0,3,0.0,0.0,loss

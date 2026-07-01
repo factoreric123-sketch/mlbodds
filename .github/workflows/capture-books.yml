@@ -1,0 +1,62 @@
+name: capture-books
+
+# Snapshots sportsbook pitcher-prop lines (K / hits / outs), de-vigged to a fair
+# P(over), and commits the daily books_<date>.csv back to the repo. Book props are
+# only posted a few hours before first pitch and the free odds-api tier has NO
+# historical endpoint, so we fire several times through the morning/early afternoon
+# ET and keep the freshest snapshot. PrizePicks lines are NOT captured here (no API).
+
+on:
+  schedule:
+    # times are UTC. ET morning captures ~8/10/12/2. During EDT (summer) ET = UTC-4,
+    # during EST (winter) ET = UTC-5. Listing both keeps ~hourly-ish coverage year-round.
+    - cron: "0 12 * * *"   # 8am EDT / 7am EST
+    - cron: "0 14 * * *"   # 10am EDT / 9am EST
+    - cron: "0 16 * * *"   # 12pm EDT / 11am EST
+    - cron: "0 18 * * *"   # 2pm EDT / 1pm EST
+  workflow_dispatch:        # allow manual runs from the Actions tab
+
+# let the job push the committed CSV back
+permissions:
+  contents: write
+
+concurrency:
+  group: capture-books
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mlb
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Capture book lines (uses UTC date == ET date for morning runs)
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python pp_tracker.py books
+
+      - name: Commit snapshot if changed
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add mlb/pp_logs/books/
+          if git diff --cached --quiet; then
+            echo "no new/changed book lines to commit"
+          else
+            git commit -m "chore(books): auto-capture $(date -u +%Y-%m-%d) $(date -u +%H:%MZ)"
+            git push
+          fi

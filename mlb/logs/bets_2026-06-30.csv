@@ -1,0 +1,13 @@
+target_date,pitcher,book,opp,line,side,price,mu,model_p,market_p,edge,opp_krate,cur_n,n_books,graded,actual_k,result,close_line,close_price,close_fair,clv
+2026-06-30,Tanner Bibee,draftkings,Texas Rangers,5.5,Under,1.71,5.2,0.582,0.558,0.023,0.223,17,4,,,,5.5,1.66,0.574,0.016
+2026-06-30,Jacob deGrom,draftkings,Cleveland Guardians,6.5,Under,2.13,6.12,0.587,0.465,0.122,0.213,16,4,,,,6.5,1.95,0.487,0.022
+2026-06-30,Cristopher Sánchez,fanduel,Pittsburgh Pirates,7.5,Under,1.81,6.25,0.71,0.534,0.176,0.254,17,4,,,,7.5,2.07,0.479,-0.055
+2026-06-30,Cam Schlittler,fanduel,Detroit Tigers,7.5,Under,1.76,6.65,0.65,0.543,0.107,0.21,17,3,,,,7.5,1.8,0.533,-0.01
+2026-06-30,Nolan McLean,fanduel,Toronto Blue Jays,5.5,Under,2.04,5.89,0.464,0.464,0.0,0.202,16,4,,,,5.5,1.83,0.514,0.05
+2026-06-30,Kevin Gausman,betonlineag,New York Mets,5.5,Under,2.04,5.3,0.564,0.481,0.082,0.219,17,4,,,,5.5,2.1,0.477,-0.004
+2026-06-30,Connelly Early,draftkings,Washington Nationals,5.5,Under,2.08,5.71,0.493,0.468,0.025,0.212,16,4,,,,5.5,2.06,0.475,0.007
+2026-06-30,Joe Ryan,draftkings,Houston Astros,6.5,Under,2.16,6.37,0.548,0.453,0.095,0.241,17,3,,,,6.5,2.1,0.451,-0.002
+2026-06-30,Justin Wrobleski,fanduel,Athletics,4.5,Under,2.22,4.62,0.51,0.432,0.079,0.237,13,3,,,,4.5,2.2,0.43,-0.002
+2026-06-30,Jeffrey Springs,draftkings,Los Angeles Dodgers,4.5,Over,2.24,5.24,0.601,0.465,0.137,0.235,17,3,,,,4.5,2.28,0.42,-0.045
+2026-06-30,José Soriano,draftkings,Seattle Mariners,5.5,Under,2.12,5.52,0.525,0.458,0.067,0.263,17,3,,,,5.5,2.04,0.468,0.01
+2026-06-30,Bryan Woo,draftkings,Los Angeles Angels,7.5,Under,1.64,5.95,0.751,0.575,0.175,0.241,16,1,,,,7.5,1.8,0.528,-0.047

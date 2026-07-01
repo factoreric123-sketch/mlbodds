@@ -1,0 +1,5 @@
+date,n_legs,type,stake,legs,avg_p,ev_per_1,exp_return,n_correct,payout_mult,payout,ticket_result
+2026-06-30,3,Flex,20.0,Jacob deGrom MORE 3.5; José Soriano MORE 4.5; Jeffrey Springs LESS 5.5,0.653,1.275,25.51,2,1.0,20.0,refund
+2026-06-30,4,Flex,20.0,Jacob deGrom MORE 3.5; José Soriano MORE 4.5; Jeffrey Springs LESS 5.5; Kevin Gausman MORE 4.5,0.641,1.571,31.41,3,1.5,30.0,win
+2026-06-30,5,Flex,20.0,Jacob deGrom MORE 3.5; José Soriano MORE 4.5; Jeffrey Springs LESS 5.5; Kevin Gausman MORE 4.5; Connelly Early MORE 4.5,0.633,1.728,34.55,3,0.4,8.0,loss
+2026-06-30,6,Flex,20.0,Jacob deGrom MORE 3.5; José Soriano MORE 4.5; Jeffrey Springs LESS 5.5; Kevin Gausman MORE 4.5; Connelly Early MORE 4.5; Bryan Woo MORE 4.5,0.626,2.222,44.43,3,0.0,0.0,loss
