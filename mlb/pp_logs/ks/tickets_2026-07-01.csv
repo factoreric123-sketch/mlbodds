@@ -1,2 +1,2 @@
 date,n_legs,type,stake,legs,avg_p,ev_per_1,exp_return,n_correct,payout_mult,payout,ticket_result
-2026-07-01,3,Flex,20.0,Michael McGreevy MORE 3.0; Zac Gallen MORE 3.5; Freddy Peralta MORE 4.5,0.574,0.985,19.7,,,,PAPER
+2026-07-01,3,Flex,20.0,Michael McGreevy MORE 3.0; Zac Gallen MORE 3.5; Freddy Peralta MORE 4.5,0.574,0.985,19.7,2,1.0,20.0,refund

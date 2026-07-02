@@ -36,9 +36,27 @@ More innings = more Ks AND more hits. One volume error would explain both:
 ### Daily tracking
 | Date | K legs | K LESS n | K LESS win% | Pred p_hit | Actual | K vs book (model lower?) | Notes |
 |------|--------|----------|-------------|-----------|--------|--------------------------|-------|
-| 2026-06-30 | 13 | 11 | see below | 0.68 | 0.46 | n/a (no book capture) | 5 LESS torched by deep outings; same pitchers cleared hits-OVER |
+| 2026-06-30 | 13 | 11 | 50% | 0.68 | 0.46 | n/a (no book capture) | 5 LESS torched by deep outings; same pitchers cleared hits-OVER |
+| 2026-07-01 | 6  | 2  | 50% | 0.56 | 0.44 | NO — model ABOVE book (+0.64) | Lugo LESS 4.0 → threw 7 (book & model both said OVER 3.5!). Meyer LESS 6.0 won. |
 
 *(2026-06-30 K-LESS detail: Woo/Ryan/Schlittler/Bibee/Roupp LESS won; Sánchez/Wrobleski/deGrom/Gausman/Soriano LESS lost. deGrom/Soriano/Gausman also cleared hits-OVER same day = volume signature.)*
+
+**CUMULATIVE (2 days): LESS 6/12 = 50.0% win vs 61.6% predicted.** Bias still losing.
+
+### IMPORTANT tension surfaced 2026-07-01 (do not force-fit H1)
+The original H1 root-cause was "model projects too FEW Ks → leans LESS → loses." But 07-01
+book data CONTRADICTS that: model ran +0.64 ABOVE the book line, and its two biggest
+disagreements were OVER leans (McGreevy +0.20, Lugo +0.11) that were directionally RIGHT
+about the raw K count. So the K-LESS *losing* pattern is real (0.50 vs 0.62, 2 days), but the
+"too few Ks / volume underestimate" mechanism is NOT supported by 07-01.
+
+New refined read: the losses on 07-01 came less from the MODEL being wrong and more from
+**PrizePicks LINE/SIDE selection**. Clearest case: **Seth Lugo** — model correctly saw a
+high-K game (0.664 OVER 3.5), book agreed (0.555 OVER), he threw 7. But we bet **LESS 4.0**
+at PrizePicks' higher line → LOSS. The model's edge vs the book was real; the PP bet inverted it.
+→ Revised hypothesis to track: are we mis-selecting the PP side when PP's line differs from the
+book's? Rule to test: when model & book both lean OVER at the book line, don't take LESS at a
+higher PP line just because the PP number is above the model μ. Track side-agreement with book.
 
 ### Evidence — deGrom case (2026-06-30)
 Cleanest example of the LESS bias: bet **deGrom LESS 6.5**, but his last-5 K = [8,6,5,9,8]

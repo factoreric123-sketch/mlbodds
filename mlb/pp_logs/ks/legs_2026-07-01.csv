@@ -1,7 +1,7 @@
 date,stat,pitcher,opp,line,home,mu,side,p_hit,conf,n_prior,actual,leg_result
-2026-07-01,ks,Michael McGreevy,Atlanta Braves,3.0,0,4.28,MORE,0.62,0.12,16,,
-2026-07-01,ks,Max Meyer,Colorado Rockies,6.0,0,6.01,LESS,0.605,0.105,17,,
-2026-07-01,ks,J.T. Ginn,Los Angeles Dodgers,4.5,1,5.16,MORE,0.588,0.088,15,,
-2026-07-01,ks,Zac Gallen,San Francisco Giants,3.5,1,4.06,MORE,0.578,0.078,17,,
-2026-07-01,ks,Seth Lugo,Tampa Bay Rays,4.0,1,4.54,LESS,0.525,0.025,16,,
-2026-07-01,ks,Freddy Peralta,Toronto Blue Jays,4.5,0,4.8,MORE,0.523,0.023,17,,
+2026-07-01,ks,Michael McGreevy,Atlanta Braves,3.0,0,4.28,MORE,0.62,0.12,16,3,push
+2026-07-01,ks,Max Meyer,Colorado Rockies,6.0,0,6.01,LESS,0.605,0.105,17,5,win
+2026-07-01,ks,J.T. Ginn,Los Angeles Dodgers,4.5,1,5.16,MORE,0.588,0.088,15,4,loss
+2026-07-01,ks,Zac Gallen,San Francisco Giants,3.5,1,4.06,MORE,0.578,0.078,17,4,win
+2026-07-01,ks,Seth Lugo,Tampa Bay Rays,4.0,1,4.54,LESS,0.525,0.025,16,7,loss
+2026-07-01,ks,Freddy Peralta,Toronto Blue Jays,4.5,0,4.8,MORE,0.523,0.023,17,4,loss
