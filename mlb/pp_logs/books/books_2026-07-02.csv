@@ -1,0 +1,24 @@
+date,stat,pitcher,name,book_line,book_p_over,n_books
+2026-07-02,hits,Trevor McDonald,trevor mcdonald,2.5,0.3587,1
+2026-07-02,ks,Slade Cecconi,slade cecconi,3.5,0.579,1
+2026-07-02,ks,Roki Sasaki,roki sasaki,4.5,0.5774,2
+2026-07-02,ks,Jared Jones,jared jones,4.5,0.5751,4
+2026-07-02,ks,Jacob Misiorowski,jacob misiorowski,8.5,0.5744,2
+2026-07-02,ks,Chase Burns,chase burns,6.5,0.5663,4
+2026-07-02,ks,Trevor McDonald,trevor mcdonald,5.5,0.5482,1
+2026-07-02,ks,Walbert Urena,walbert urena,4.5,0.5243,4
+2026-07-02,ks,Davis Martin,davis martin,4.5,0.5125,1
+2026-07-02,ks,Nathan Eovaldi,nathan eovaldi,6.5,0.5052,3
+2026-07-02,ks,Ian Seymour,ian seymour,4.5,0.5042,1
+2026-07-02,ks,Bryce Miller,bryce miller,6.5,0.4707,4
+2026-07-02,ks,Framber Valdez,framber valdez,5.5,0.441,3
+2026-07-02,ks,Alan Rangel,alan rangel,4.5,0.4343,4
+2026-07-02,ks,Randy Vasquez,randy vasquez,3.5,0.4182,3
+2026-07-02,ks,Stephen Kolek,stephen kolek,3.5,0.3962,1
+2026-07-02,outs,Walbert Urena,walbert urena,16.5,0.5464,2
+2026-07-02,outs,Chase Burns,chase burns,17.5,0.546,2
+2026-07-02,outs,Bryce Miller,bryce miller,17.5,0.5368,2
+2026-07-02,outs,Alan Rangel,alan rangel,14.5,0.5098,2
+2026-07-02,outs,Roki Sasaki,roki sasaki,16.5,0.4649,1
+2026-07-02,outs,Jacob Misiorowski,jacob misiorowski,18.5,0.377,2
+2026-07-02,outs,Trevor McDonald,trevor mcdonald,18.5,0.3172,1
