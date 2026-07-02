@@ -217,6 +217,7 @@ def capture_books(date: str):
     rev_market = {v: k for k, v in BOOK_MARKETS.items()}
     events = predict_day.list_events()
     rows = []
+    detail = []  # one row per (stat, pitcher, book): raw prices for line-shopping / CLV
     remaining = None
     for e in events:
         try:
@@ -226,6 +227,7 @@ def capture_books(date: str):
         # collect all (line, over, under) quotes per (stat, pitcher) across books
         agg = {}
         for bm in data.get("bookmakers", []):
+            book = bm.get("key", "?")
             for m in bm.get("markets", []):
                 stat = rev_market.get(m["key"])
                 if not stat:
@@ -237,6 +239,10 @@ def capture_books(date: str):
                     line, over, under = q
                     agg.setdefault((stat, norm(pitcher), pitcher), []).append(
                         (line, _amer_to_dec(over), _amer_to_dec(under)))
+                    detail.append(dict(date=date, stat=stat, pitcher=pitcher,
+                                       name=norm(pitcher), book=book, line=line,
+                                       over_dec=round(_amer_to_dec(over), 4),
+                                       under_dec=round(_amer_to_dec(under), 4)))
         for (stat, key, disp), quotes in agg.items():
             # consensus at the modal line, median price, de-vigged
             from collections import Counter
@@ -256,9 +262,13 @@ def capture_books(date: str):
     os.makedirs(bdir, exist_ok=True)
     path = os.path.join(bdir, f"books_{date}.csv")
     df.to_csv(path, index=False)
+    if detail:
+        ddf = pd.DataFrame(detail).sort_values(["stat", "name", "book"])
+        dpath = os.path.join(bdir, f"books_detail_{date}.csv")
+        ddf.to_csv(dpath, index=False)
     by = df.groupby("stat").size().to_dict()
     print(f"[books] {date}: captured {len(df)} lines {by} -> {os.path.relpath(path, ROOT)}"
-          f"  (odds-api remaining: {remaining})")
+          f"  ({len(detail)} per-book quotes)  (odds-api remaining: {remaining})")
 
 
 def log_day(date: str, stat: str = "ks"):
