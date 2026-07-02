@@ -43,6 +43,32 @@ More innings = more Ks AND more hits. One volume error would explain both:
 
 **CUMULATIVE (2 days): LESS 6/12 = 50.0% win vs 61.6% predicted.** Bias still losing.
 
+## H6 — Winner/Loser attribute analysis (CANDIDATE, n=31, DO NOT over-trust)
+Ran a win/loss attribute split over all 31 graded legs (06-30 + 07-01, K+hits). Tool: /tmp/winloss.py.
+**Sample is far too small for significance — these are candidate filters to TRACK forward, not proven edges.**
+
+Overall: 16/31 = 52% win vs 59% predicted (model mildly overconfident — the one robust finding).
+
+Candidate separators (by trust):
+- **F1 (strongest): cut near-coin-flip legs.** p_hit < 0.55 legs went ~36% win; keeping only
+  p_hit >= 0.55 lifts the set to 23/31 = 61% win vs 62% predicted (near-perfectly calibrated).
+  Pushing threshold HIGHER (0.58/0.60) does NOT help — it's specifically the <0.55 coin-flips
+  that are poison, not "more confidence = better."
+- The <0.55 losers are mostly **Ks + LESS** (Lugo 7, Gausman 7, Soriano 9 all blew past LESS).
+  Ties H1 together: coin-flip K-LESS bets are the concentrated loss source.
+- Ks 44% (vs 60% pred) HARD; hits 62% (vs 59%) fine. MORE 59% > LESS 43%.
+- book_agree / pp_line filters: n=2 each -> ZERO conclusions (this is the real edge thesis and we
+  have no data on it yet; automation is now capturing it).
+
+**Candidate rule to test forward (NOT yet adopted): skip legs with model p_hit < 0.55.**
+Confirm/kill after ~2-3 weeks of graded legs. If it holds, bake into log_day as a filter.
+
+### Attributes to capture on EVERY future trade (for the real analysis once n is large)
+side, stat, p_hit, conf, line height, actual, hit_margin (actual-line signed by side),
+model_p_over vs book_p_over (edge + who was right), book_agree (model side == book lean?),
+pp_line_softness (PP line vs book line), n_books, days_rest if available. The edge_finder +
+book_detail capture now log the book-side fields; win/loss + margins come from grading.
+
 ### IMPORTANT tension surfaced 2026-07-01 (do not force-fit H1)
 The original H1 root-cause was "model projects too FEW Ks → leans LESS → loses." But 07-01
 book data CONTRADICTS that: model ran +0.64 ABOVE the book line, and its two biggest
