@@ -74,9 +74,11 @@ def main():
     ap.add_argument("--date", required=True)
     ap.add_argument("--board", required=True, help="text file of PP legs: name|stat|line|side[|product]")
     ap.add_argument("--min-edge", type=float, default=0.03, help="min P(hit)-over-breakeven to flag")
+    ap.add_argument("--books", default="books", help="consensus file prefix (e.g. wnba_books)")
+    ap.add_argument("--log", default=None, help="append EDGE rows to this CSV under pp_logs/ (e.g. wnba_edges.csv)")
     args = ap.parse_args()
 
-    cons = pd.read_csv(os.path.join(BOOKS, f"books_{args.date}.csv"))
+    cons = pd.read_csv(os.path.join(BOOKS, f"{args.books}_{args.date}.csv"))
     cons["key"] = cons["name"] + "|" + cons["stat"]
     cons = cons.set_index("key")
 
@@ -110,6 +112,17 @@ def main():
     print(f"\n>>> {len(edges)} EDGE(s) where PrizePicks deviates from sharp consensus by >= {args.min_edge:.0%}")
     if len(edges):
         print("    (these are model-FREE: grounded in the sharp market, not our model)")
+
+    if args.log and len(edges):
+        edges = edges.copy()
+        edges.insert(0, "date", args.date)
+        path = os.path.join(BOOKS, "..", args.log)
+        path = os.path.normpath(path)
+        header = not os.path.exists(path)
+        edges[["date", "pitcher", "stat", "pp_line", "side", "product",
+               "sharp_line", "sharp_mu", "pp_p_hit", "breakeven", "edge",
+               "n_books"]].to_csv(path, mode="a", header=header, index=False)
+        print(f"    logged {len(edges)} edge(s) -> {os.path.relpath(path, ROOT)}")
 
 
 if __name__ == "__main__":
