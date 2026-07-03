@@ -76,6 +76,7 @@ def main():
     ap.add_argument("--min-edge", type=float, default=0.03, help="min P(hit)-over-breakeven to flag")
     ap.add_argument("--books", default="books", help="consensus file prefix (e.g. wnba_books)")
     ap.add_argument("--log", default=None, help="append EDGE rows to this CSV under pp_logs/ (e.g. wnba_edges.csv)")
+    ap.add_argument("--tag", default="core", help="confidence bucket tag for logged edges (e.g. lowconf)")
     args = ap.parse_args()
 
     cons = pd.read_csv(os.path.join(BOOKS, f"{args.books}_{args.date}.csv"))
@@ -116,13 +117,14 @@ def main():
     if args.log and len(edges):
         edges = edges.copy()
         edges.insert(0, "date", args.date)
+        edges["tag"] = args.tag
         path = os.path.join(BOOKS, "..", args.log)
         path = os.path.normpath(path)
         header = not os.path.exists(path)
         edges[["date", "pitcher", "stat", "pp_line", "side", "product",
                "sharp_line", "sharp_mu", "pp_p_hit", "breakeven", "edge",
-               "n_books"]].to_csv(path, mode="a", header=header, index=False)
-        print(f"    logged {len(edges)} edge(s) -> {os.path.relpath(path, ROOT)}")
+               "n_books", "tag"]].to_csv(path, mode="a", header=header, index=False)
+        print(f"    logged {len(edges)} edge(s) [tag={args.tag}] -> {os.path.relpath(path, ROOT)}")
 
 
 if __name__ == "__main__":

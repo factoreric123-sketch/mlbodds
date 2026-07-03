@@ -23,7 +23,7 @@ KEY = os.environ.get("ODDS_API_KEY", "fe9d1397428c77c97755aa7558a6bb19")
 SPORT = "basketball_wnba"
 
 MARKETS = {"points": "player_points", "rebounds": "player_rebounds", "assists": "player_assists",
-           "pra": "player_points_rebounds_assists"}
+           "pra": "player_points_rebounds_assists", "threes": "player_threes"}
 REV = {v: k for k, v in MARKETS.items()}
 
 

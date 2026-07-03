@@ -16,7 +16,7 @@ import requests
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 LOG = os.path.join(ROOT, "pp_logs", "wnba_edges.csv")
-STAT_COL = {"points": "PTS", "rebounds": "REB", "assists": "AST", "pra": "PRA"}
+STAT_COL = {"points": "PTS", "rebounds": "REB", "assists": "AST", "pra": "PRA", "threes": "3PTM"}
 
 
 def norm(s):
@@ -50,7 +50,12 @@ def box_scores(date: str) -> dict:
 
                     pts, reb, ast = gi("PTS"), gi("REB"), gi("AST")
                     pra = None if None in (pts, reb, ast) else pts + reb + ast
-                    out[norm(a["athlete"]["displayName"])] = {"PTS": pts, "REB": reb, "AST": ast, "PRA": pra}
+                    tpm = None
+                    v3 = row.get("3PT")  # ESPN reports made-attempted, e.g. "2-5"
+                    if v3 not in (None, "--", "") and "-" in str(v3):
+                        tpm = int(str(v3).split("-")[0])
+                    out[norm(a["athlete"]["displayName"])] = {"PTS": pts, "REB": reb, "AST": ast,
+                                                              "PRA": pra, "3PTM": tpm}
     return out
 
 
@@ -83,17 +88,22 @@ def main():
         actual = box.get(norm(r["pitcher"]), {}).get(col)
         res = grade_leg(actual, r["pp_line"], r["side"])
         results.append(dict(name=r["pitcher"], stat=r["stat"], line=r["pp_line"],
-                            side=r["side"], edge=r["edge"], actual=actual, result=res))
+                            side=r["side"], edge=r["edge"], tag=r.get("tag", "core"),
+                            actual=actual, result=res))
     rd = pd.DataFrame(results)
-    graded = rd[rd["result"].notna()]
+
+    def record(sub):
+        g = sub[sub["result"].notna()]
+        w = int((g["result"] == "win").sum())
+        l = int((g["result"] == "loss").sum())
+        rate = f" ({w/(w+l):.1%})" if (w + l) else ""
+        return f"{w}W-{l}L{rate}"
 
     print(f"### WNBA edge grades {args.date} ###\n")
     print(rd.to_string(index=False))
-    w = (graded["result"] == "win").sum()
-    l = (graded["result"] == "loss").sum()
     nd = rd["result"].isna().sum()
-    print(f"\n{args.date}: {w}W-{l}L"
-          f"{f' ({w/(w+l):.1%})' if (w+l) else ''}   ({nd} not-yet-final/no-data)")
+    print(f"\n{args.date}:  core {record(rd[rd.tag=='core'])}   |   "
+          f"lowconf {record(rd[rd.tag=='lowconf'])}   ({nd} not-yet-final/no-data)")
 
     # persist grades so cumulative record survives across runs
     gpath = os.path.join(ROOT, "pp_logs", "wnba_grades.csv")
@@ -106,11 +116,9 @@ def main():
         allg = rd
     allg.to_csv(gpath, index=False)
 
-    cg = allg[allg["result"].notna()]
-    W = (cg["result"] == "win").sum()
-    L = (cg["result"] == "loss").sum()
-    print(f"CUMULATIVE: {W}W-{L}L ({W/(W+L):.1%})   over {allg['date'].nunique()} date(s)  "
-          f"-> {os.path.relpath(gpath, ROOT)}")
+    print(f"CUMULATIVE:  core {record(allg[allg.tag=='core'])}   |   "
+          f"lowconf {record(allg[allg.tag=='lowconf'])}   "
+          f"over {allg['date'].nunique()} date(s)  -> {os.path.relpath(gpath, ROOT)}")
 
 
 if __name__ == "__main__":
