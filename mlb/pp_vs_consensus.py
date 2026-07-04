@@ -29,6 +29,10 @@ BOOKS = os.path.join(ROOT, "pp_logs", "books")
 # We report raw P(hit) vs a reference 0.50 and vs common Goblin/Demon thresholds.
 PRODUCT_BE = {"std": 0.50, "goblin": 0.60, "demon": 0.65}  # rough single-leg break-evens
 
+# A "favorite" edge = core market where the sharp line sits this many units off the
+# PP line (a big, model-free soft-line discount, e.g. Stewart pts PP 14.5 vs sharp 19.5).
+FAVORITE_GAP = 2.0
+
 
 def norm(s):
     return "".join(c for c in unicodedata.normalize("NFKD", str(s)) if not unicodedata.combining(c)).lower().strip()
@@ -118,6 +122,10 @@ def main():
         edges = edges.copy()
         edges.insert(0, "date", args.date)
         edges["tag"] = args.tag
+        # promote high-conviction "favorite" edges: core markets where the sharp
+        # line sits >= FAVORITE_GAP units off the PP line (model-free soft line).
+        gap = (edges["sharp_line"] - edges["pp_line"]).abs()
+        edges.loc[(edges["tag"] == "core") & (gap >= FAVORITE_GAP), "tag"] = "favorite"
         path = os.path.join(BOOKS, "..", args.log)
         path = os.path.normpath(path)
         header = not os.path.exists(path)

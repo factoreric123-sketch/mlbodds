@@ -102,7 +102,8 @@ def main():
     print(f"### WNBA edge grades {args.date} ###\n")
     print(rd.to_string(index=False))
     nd = rd["result"].isna().sum()
-    print(f"\n{args.date}:  core {record(rd[rd.tag=='core'])}   |   "
+    print(f"\n{args.date}:  \u2b50favorite {record(rd[rd.tag=='favorite'])}   |   "
+          f"core {record(rd[rd.tag=='core'])}   |   "
           f"lowconf {record(rd[rd.tag=='lowconf'])}   ({nd} not-yet-final/no-data)")
 
     # persist grades so cumulative record survives across runs
@@ -116,7 +117,8 @@ def main():
         allg = rd
     allg.to_csv(gpath, index=False)
 
-    print(f"CUMULATIVE:  core {record(allg[allg.tag=='core'])}   |   "
+    print(f"CUMULATIVE:  \u2b50favorite {record(allg[allg.tag=='favorite'])}   |   "
+          f"core {record(allg[allg.tag=='core'])}   |   "
           f"lowconf {record(allg[allg.tag=='lowconf'])}   "
           f"over {allg['date'].nunique()} date(s)  -> {os.path.relpath(gpath, ROOT)}")
 
