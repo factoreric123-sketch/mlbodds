@@ -24,13 +24,22 @@ def norm(s):
 
 
 def box_scores(date: str) -> dict:
-    """date 'YYYY-MM-DD' -> {norm_name: {PTS,REB,AST,PRA}} for FINAL games only."""
-    ymd = date.replace("-", "")
-    r = requests.get("https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard",
-                     params={"dates": ymd})
-    r.raise_for_status()
-    gids = [ev["id"] for ev in r.json().get("events", [])
-            if ev["competitions"][0]["status"]["type"]["name"] == "STATUS_FINAL"]
+    """date 'YYYY-MM-DD' -> {norm_name: {PTS,REB,AST,PRA}} for FINAL games only.
+
+    ESPN buckets games by UTC date, so a 9-10pm ET tip rolls into the NEXT
+    UTC day. We stamp legs by ET game date, so we scan that date AND the day
+    after to catch those late games.
+    """
+    dt = pd.to_datetime(date)
+    ymds = [dt.strftime("%Y%m%d"), (dt + pd.Timedelta(days=1)).strftime("%Y%m%d")]
+    gids = []
+    for ymd in ymds:
+        r = requests.get("https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/scoreboard",
+                         params={"dates": ymd})
+        r.raise_for_status()
+        gids += [ev["id"] for ev in r.json().get("events", [])
+                 if ev["competitions"][0]["status"]["type"]["name"] == "STATUS_FINAL"]
+    gids = list(dict.fromkeys(gids))  # dedupe, keep order
     out = {}
     for gid in gids:
         d = requests.get("https://site.api.espn.com/apis/site/v2/sports/basketball/wnba/summary",
