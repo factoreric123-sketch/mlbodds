@@ -88,7 +88,7 @@ def main():
         actual = box.get(norm(r["pitcher"]), {}).get(col)
         res = grade_leg(actual, r["pp_line"], r["side"])
         results.append(dict(name=r["pitcher"], stat=r["stat"], line=r["pp_line"],
-                            side=r["side"], edge=r["edge"], tag=r.get("tag", "core"),
+                            side=r["side"], edge=r["edge"], tier=r.get("tier", "okay"),
                             actual=actual, result=res))
     rd = pd.DataFrame(results)
 
@@ -99,12 +99,18 @@ def main():
         rate = f" ({w/(w+l):.1%})" if (w + l) else ""
         return f"{w}W-{l}L{rate}"
 
+    def summary(sub):
+        real = sub[sub.tier.isin(["great", "good", "okay"])]  # exclude threes
+        return (f"\u2b50great {record(sub[sub.tier=='great'])}   |   "
+                f"good {record(sub[sub.tier=='good'])}   |   "
+                f"okay {record(sub[sub.tier=='okay'])}\n"
+                f"     OVERALL (great+good+okay) {record(real)}   |   "
+                f"threes {record(sub[sub.tier=='threes'])}")
+
     print(f"### WNBA edge grades {args.date} ###\n")
     print(rd.to_string(index=False))
     nd = rd["result"].isna().sum()
-    print(f"\n{args.date}:  \u2b50favorite {record(rd[rd.tag=='favorite'])}   |   "
-          f"core {record(rd[rd.tag=='core'])}   |   "
-          f"lowconf {record(rd[rd.tag=='lowconf'])}   ({nd} not-yet-final/no-data)")
+    print(f"\n{args.date}:  {summary(rd)}   ({nd} not-yet-final/no-data)")
 
     # persist grades so cumulative record survives across runs
     gpath = os.path.join(ROOT, "pp_logs", "wnba_grades.csv")
@@ -117,9 +123,7 @@ def main():
         allg = rd
     allg.to_csv(gpath, index=False)
 
-    print(f"CUMULATIVE:  \u2b50favorite {record(allg[allg.tag=='favorite'])}   |   "
-          f"core {record(allg[allg.tag=='core'])}   |   "
-          f"lowconf {record(allg[allg.tag=='lowconf'])}   "
+    print(f"CUMULATIVE:  {summary(allg)}   "
           f"over {allg['date'].nunique()} date(s)  -> {os.path.relpath(gpath, ROOT)}")
 
 

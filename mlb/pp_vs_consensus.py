@@ -29,9 +29,21 @@ BOOKS = os.path.join(ROOT, "pp_logs", "books")
 # We report raw P(hit) vs a reference 0.50 and vs common Goblin/Demon thresholds.
 PRODUCT_BE = {"std": 0.50, "goblin": 0.60, "demon": 0.65}  # rough single-leg break-evens
 
-# A "favorite" edge = core market where the sharp line sits this many units off the
-# PP line (a big, model-free soft-line discount, e.g. Stewart pts PP 14.5 vs sharp 19.5).
-FAVORITE_GAP = 2.0
+# Confidence tiers for a REAL-market edge (not threes). We blend two signals:
+#   line-gap = |sharp_line - pp_line|  -> model-FREE soft-line discount (strongest)
+#   edge     = P(hit) - break-even     -> Poisson-derived (secondary, shakier)
+# great: a big gap OR a fat edge; good: solid edge; okay: marginal (>= flag threshold).
+GREAT_GAP = 2.0
+GREAT_EDGE = 0.12
+GOOD_EDGE = 0.07
+
+
+def edge_tier(gap: float, edge: float) -> str:
+    if gap >= GREAT_GAP or edge >= GREAT_EDGE:
+        return "great"
+    if edge >= GOOD_EDGE:
+        return "good"
+    return "okay"
 
 
 def norm(s):
@@ -80,7 +92,7 @@ def main():
     ap.add_argument("--min-edge", type=float, default=0.03, help="min P(hit)-over-breakeven to flag")
     ap.add_argument("--books", default="books", help="consensus file prefix (e.g. wnba_books)")
     ap.add_argument("--log", default=None, help="append EDGE rows to this CSV under pp_logs/ (e.g. wnba_edges.csv)")
-    ap.add_argument("--tag", default="core", help="confidence bucket tag for logged edges (e.g. lowconf)")
+    ap.add_argument("--tag", default="core", help="pass 'lowconf' for threes; else tiers are auto-assigned great/good/okay")
     args = ap.parse_args()
 
     cons = pd.read_csv(os.path.join(BOOKS, f"{args.books}_{args.date}.csv"))
@@ -121,18 +133,21 @@ def main():
     if args.log and len(edges):
         edges = edges.copy()
         edges.insert(0, "date", args.date)
-        edges["tag"] = args.tag
-        # promote high-conviction "favorite" edges: core markets where the sharp
-        # line sits >= FAVORITE_GAP units off the PP line (model-free soft line).
-        gap = (edges["sharp_line"] - edges["pp_line"]).abs()
-        edges.loc[(edges["tag"] == "core") & (gap >= FAVORITE_GAP), "tag"] = "favorite"
+        # threes (--tag lowconf) stay in their own bucket -- Poisson is unreliable on
+        # them, so they're excluded from the great/good/okay confidence tiers.
+        if args.tag == "lowconf":
+            edges["tier"] = "threes"
+        else:
+            gap = (edges["sharp_line"] - edges["pp_line"]).abs()
+            edges["tier"] = [edge_tier(g, e) for g, e in zip(gap, edges["edge"])]
         path = os.path.join(BOOKS, "..", args.log)
         path = os.path.normpath(path)
         header = not os.path.exists(path)
         edges[["date", "pitcher", "stat", "pp_line", "side", "product",
                "sharp_line", "sharp_mu", "pp_p_hit", "breakeven", "edge",
-               "n_books", "tag"]].to_csv(path, mode="a", header=header, index=False)
-        print(f"    logged {len(edges)} edge(s) [tag={args.tag}] -> {os.path.relpath(path, ROOT)}")
+               "n_books", "tier"]].to_csv(path, mode="a", header=header, index=False)
+        by = edges["tier"].value_counts().to_dict()
+        print(f"    logged {len(edges)} edge(s) {by} -> {os.path.relpath(path, ROOT)}")
 
 
 if __name__ == "__main__":
