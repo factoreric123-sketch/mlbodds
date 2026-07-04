@@ -1,0 +1,34 @@
+# SEA vs PDX (Sat 9pm) -- points
+Dominique Malonga | points | 18 | MORE | std
+Natisha Hiedeman | points | 15 | MORE | std
+Carla Leite | points | 14.5 | MORE | std
+Flau'jae Johnson | points | 13.5 | MORE | std
+Bridget Carleton | points | 13.5 | MORE | std
+Megan Gustafson | points | 12.5 | MORE | std
+Awa Fam | points | 12 | MORE | std
+Sarah Ashlee Barker | points | 11 | MORE | std
+Jade Melbourne | points | 9.5 | MORE | std
+# rebounds
+Dominique Malonga | rebounds | 8.5 | MORE | std
+Flau'jae Johnson | rebounds | 4.5 | MORE | goblin
+Awa Fam | rebounds | 5 | MORE | std
+Sarah Ashlee Barker | rebounds | 4 | MORE | std
+Megan Gustafson | rebounds | 2.5 | MORE | goblin
+Bridget Carleton | rebounds | 3.5 | MORE | std
+Carla Leite | rebounds | 1.5 | MORE | goblin
+Natisha Hiedeman | rebounds | 1.5 | MORE | goblin
+Jade Melbourne | rebounds | 4.5 | MORE | demon
+# assists
+Carla Leite | assists | 6 | MORE | std
+Natisha Hiedeman | assists | 3.5 | MORE | goblin
+Jade Melbourne | assists | 3.5 | MORE | goblin
+# pra
+Carla Leite | pra | 23.5 | MORE | std
+Natisha Hiedeman | pra | 23.5 | MORE | std
+Dominique Malonga | pra | 28.5 | MORE | std
+Jade Melbourne | pra | 14.5 | MORE | goblin
+Flau'jae Johnson | pra | 21.5 | MORE | std
+Bridget Carleton | pra | 19 | MORE | std
+Awa Fam | pra | 18.5 | MORE | std
+Sarah Ashlee Barker | pra | 18 | MORE | std
+Megan Gustafson | pra | 16.5 | MORE | std
