@@ -63,3 +63,9 @@ date,pitcher,stat,pp_line,side,product,sharp_line,sharp_mu,pp_p_hit,breakeven,ed
 2026-07-05,NaLyssa Smith,rebounds,6.5,MORE,std,6.5,6.89,0.533,0.5,0.033,3.0,okay
 2026-07-05,Kelsey Mitchell,rebounds,1.5,MORE,goblin,2.5,2.17,0.637,0.6,0.037,2.0,okay
 2026-07-05,Aliyah Boston,assists,2.5,MORE,goblin,3.5,3.55,0.689,0.6,0.089,3.0,good
+2026-07-04,Bridget Carleton,threes,1.5,MORE,goblin,2.5,2.52,0.716,0.6,0.116,3.0,threes
+2026-07-04,Natisha Hiedeman,threes,1.5,MORE,goblin,2.5,2.27,0.663,0.6,0.063,3.0,threes
+2026-07-05,Marina Mabrey,threes,2.5,MORE,goblin,3.5,3.49,0.677,0.6,0.077,3,threes
+2026-07-05,Kelsey Mitchell,threes,1.5,MORE,goblin,2.5,2.56,0.725,0.6,0.125,3,threes
+2026-07-05,Aliyah Boston,threes,0.5,MORE,goblin,1.5,1.16,0.688,0.6,0.088,3,threes
+2026-07-05,Lexie Hull,threes,0.5,MORE,goblin,1.5,1.25,0.715,0.6,0.115,3,threes
