@@ -1,12 +1,12 @@
 date,stat,pitcher,name,book_line,book_p_over,n_books
-2026-10-01,hits,Aaron Nola,aaron nola,3.5,0.5123,2
+2026-10-01,hits,Aaron Nola,aaron nola,3.5,0.5082,2
 2026-10-01,ks,Ray Kerr,ray kerr,0.5,0.6509,2
-2026-10-01,ks,Aaron Nola,aaron nola,3.5,0.5306,6
-2026-10-01,ks,Parker Messick,parker messick,6.5,0.4899,3
-2026-10-01,ks,Drew Rasmussen,drew rasmussen,6.5,0.4494,3
-2026-10-01,ks,Jacob Misiorowski,jacob misiorowski,8.5,0.4476,4
-2026-10-01,outs,Grant Holmes,grant holmes,11.5,0.5385,1
-2026-10-01,outs,Aaron Nola,aaron nola,11.5,0.5358,2
+2026-10-01,ks,Aaron Nola,aaron nola,3.5,0.5273,6
+2026-10-01,ks,Parker Messick,parker messick,6.5,0.486,4
+2026-10-01,ks,Drew Rasmussen,drew rasmussen,6.5,0.4516,4
+2026-10-01,ks,Jacob Misiorowski,jacob misiorowski,8.5,0.4439,4
+2026-10-01,outs,Grant Holmes,grant holmes,11.5,0.5446,1
+2026-10-01,outs,Aaron Nola,aaron nola,11.5,0.5353,2
 2026-10-01,outs,Drew Rasmussen,drew rasmussen,16.5,0.5191,2
-2026-10-01,outs,Parker Messick,parker messick,17.5,0.4951,3
 2026-10-01,outs,Jacob Misiorowski,jacob misiorowski,17.5,0.4853,3
+2026-10-01,outs,Parker Messick,parker messick,17.5,0.4842,3
