@@ -1,0 +1,16 @@
+date,stat,pitcher,name,book_line,book_p_over,n_books
+2026-10-02,hits,Hagen Smith,hagen smith,1.5,0.568,2
+2026-10-02,hits,Jacob Misiorowski,jacob misiorowski,3.5,0.5258,3
+2026-10-02,hits,Drew Rasmussen,drew rasmussen,3.5,0.5147,3
+2026-10-02,hits,Parker Messick,parker messick,4.5,0.4525,3
+2026-10-02,hits,Gerrit Cole,gerrit cole,5.5,0.4165,3
+2026-10-02,ks,Hagen Smith,hagen smith,1.5,0.5967,4
+2026-10-02,ks,Gerrit Cole,gerrit cole,4.5,0.5829,3
+2026-10-02,ks,Jacob Misiorowski,jacob misiorowski,7.5,0.5553,3
+2026-10-02,ks,Parker Messick,parker messick,6.5,0.4815,5
+2026-10-02,ks,Drew Rasmussen,drew rasmussen,6.5,0.4459,5
+2026-10-02,outs,Parker Messick,parker messick,16.5,0.545,2
+2026-10-02,outs,Gerrit Cole,gerrit cole,16.5,0.5221,3
+2026-10-02,outs,Drew Rasmussen,drew rasmussen,16.5,0.5113,2
+2026-10-02,outs,Jacob Misiorowski,jacob misiorowski,17.5,0.5029,3
+2026-10-02,outs,Hagen Smith,hagen smith,6.5,0.4268,2
