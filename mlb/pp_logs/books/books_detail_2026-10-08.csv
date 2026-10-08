@@ -1,0 +1,27 @@
+date,stat,pitcher,name,book,line,over_dec,under_dec
+2026-10-08,hits,Hagen Smith,hagen smith,bovada,1.5,2.2,1.625
+2026-10-08,hits,Hagen Smith,hagen smith,draftkings,1.5,2.19,1.6289
+2026-10-08,hits,Parker Messick,parker messick,bovada,3.5,1.625,2.2
+2026-10-08,hits,Parker Messick,parker messick,draftkings,3.5,1.6211,2.21
+2026-10-08,ks,Hagen Smith,hagen smith,betonlineag,2.5,2.36,1.5587
+2026-10-08,ks,Hagen Smith,hagen smith,bovada,1.5,1.5556,2.35
+2026-10-08,ks,Hagen Smith,hagen smith,draftkings,1.5,1.5747,2.36
+2026-10-08,ks,Hagen Smith,hagen smith,mybookieag,2.5,2.28,1.5587
+2026-10-08,ks,Jacob Misiorowski,jacob misiorowski,bovada,7.5,2.05,1.7407
+2026-10-08,ks,Jacob Misiorowski,jacob misiorowski,fanduel,7.5,2.04,1.7576
+2026-10-08,ks,Parker Messick,parker messick,betmgm,5.5,1.7407,2.0
+2026-10-08,ks,Parker Messick,parker messick,betonlineag,5.5,1.7692,2.0
+2026-10-08,ks,Parker Messick,parker messick,bovada,5.5,1.6667,2.15
+2026-10-08,ks,Parker Messick,parker messick,draftkings,5.5,1.6667,2.18
+2026-10-08,ks,Parker Messick,parker messick,fanduel,5.5,1.7042,2.12
+2026-10-08,ks,Parker Messick,parker messick,mybookieag,5.5,1.7519,1.9615
+2026-10-08,ks,Tarik Skubal,tarik skubal,bovada,7.5,1.8696,1.8696
+2026-10-08,ks,Tarik Skubal,tarik skubal,fanduel,7.5,1.8696,1.9009
+2026-10-08,outs,Hagen Smith,hagen smith,betmgm,5.5,1.6452,2.1
+2026-10-08,outs,Hagen Smith,hagen smith,bovada,5.5,1.625,2.2
+2026-10-08,outs,Hagen Smith,hagen smith,draftkings,5.5,1.6452,2.17
+2026-10-08,outs,Hagen Smith,hagen smith,fanduel,5.5,1.6944,2.08
+2026-10-08,outs,Parker Messick,parker messick,betmgm,14.5,1.625,2.2
+2026-10-08,outs,Parker Messick,parker messick,bovada,14.5,1.5,2.5
+2026-10-08,outs,Parker Messick,parker messick,draftkings,14.5,1.4717,2.58
+2026-10-08,outs,Parker Messick,parker messick,fanduel,14.5,1.6024,2.24
