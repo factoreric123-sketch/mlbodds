@@ -1,13 +1,13 @@
 date,stat,pitcher,name,book_line,book_p_over,n_books
-2026-10-10,hits,Jacob Misiorowski,jacob misiorowski,3.5,0.4897,2
-2026-10-10,hits,Tarik Skubal,tarik skubal,4.5,0.4871,3
+2026-10-10,hits,Jacob Misiorowski,jacob misiorowski,3.5,0.4853,3
+2026-10-10,hits,Tarik Skubal,tarik skubal,4.5,0.4638,3
 2026-10-10,hits,Sean Burke,sean burke,3.5,0.4452,3
-2026-10-10,hits,Gavin Williams,gavin williams,3.5,0.4106,3
-2026-10-10,ks,Sean Burke,sean burke,3.5,0.5501,6
-2026-10-10,ks,Gavin Williams,gavin williams,6.5,0.529,6
+2026-10-10,hits,Gavin Williams,gavin williams,3.5,0.4085,3
+2026-10-10,ks,Sean Burke,sean burke,3.5,0.5594,6
+2026-10-10,ks,Gavin Williams,gavin williams,6.5,0.5272,6
 2026-10-10,ks,Jacob Misiorowski,jacob misiorowski,7.5,0.4604,5
-2026-10-10,ks,Tarik Skubal,tarik skubal,7.5,0.4389,4
-2026-10-10,outs,Tarik Skubal,tarik skubal,17.5,0.5835,3
+2026-10-10,ks,Tarik Skubal,tarik skubal,7.5,0.4373,3
+2026-10-10,outs,Tarik Skubal,tarik skubal,17.5,0.5921,3
 2026-10-10,outs,Jacob Misiorowski,jacob misiorowski,16.5,0.5238,3
 2026-10-10,outs,Gavin Williams,gavin williams,14.5,0.5072,2
-2026-10-10,outs,Sean Burke,sean burke,12.5,0.4547,3
+2026-10-10,outs,Sean Burke,sean burke,12.5,0.4754,3
