@@ -1,12 +1,8 @@
 date,stat,pitcher,name,book_line,book_p_over,n_books
-2026-10-12,hits,Yoshinobu Yamamoto,yoshinobu yamamoto,4.5,0.5575,1
 2026-10-12,hits,Drew Rasmussen,drew rasmussen,4.5,0.4518,3
 2026-10-12,hits,Foster Griffin,foster griffin,4.5,0.4289,3
-2026-10-12,hits,Logan Henderson,logan henderson,3.5,0.3866,1
-2026-10-12,ks,Yoshinobu Yamamoto,yoshinobu yamamoto,4.5,0.5709,2
-2026-10-12,ks,Foster Griffin,foster griffin,3.5,0.5016,6
-2026-10-12,ks,Drew Rasmussen,drew rasmussen,5.5,0.5,6
-2026-10-12,ks,Logan Henderson,logan henderson,4.5,0.4615,1
-2026-10-12,outs,Logan Henderson,logan henderson,14.5,0.6113,1
+2026-10-12,ks,Logan Henderson,logan henderson,3.5,0.5446,1
+2026-10-12,ks,Foster Griffin,foster griffin,3.5,0.499,6
+2026-10-12,ks,Drew Rasmussen,drew rasmussen,5.5,0.498,6
 2026-10-12,outs,Drew Rasmussen,drew rasmussen,17.5,0.5192,5
 2026-10-12,outs,Foster Griffin,foster griffin,13.5,0.4566,3
