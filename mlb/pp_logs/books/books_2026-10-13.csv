@@ -1,13 +1,13 @@
 date,stat,pitcher,name,book_line,book_p_over,n_books
-2026-10-13,hits,Blake Snell,blake snell,3.5,0.5732,2
+2026-10-13,hits,Blake Snell,blake snell,3.5,0.5548,3
 2026-10-13,hits,Robert Gasser,robert gasser,3.5,0.5258,3
-2026-10-13,hits,Freddy Peralta,freddy peralta,3.5,0.4746,3
 2026-10-13,hits,Parker Messick,parker messick,4.5,0.4678,3
-2026-10-13,ks,Freddy Peralta,freddy peralta,3.5,0.5339,6
+2026-10-13,hits,Freddy Peralta,freddy peralta,3.5,0.4554,3
+2026-10-13,ks,Freddy Peralta,freddy peralta,3.5,0.5327,6
 2026-10-13,ks,Robert Gasser,robert gasser,3.5,0.5082,5
-2026-10-13,ks,Parker Messick,parker messick,4.5,0.5,6
-2026-10-13,ks,Blake Snell,blake snell,6.5,0.4182,3
-2026-10-13,outs,Blake Snell,blake snell,14.5,0.5638,2
-2026-10-13,outs,Parker Messick,parker messick,14.5,0.5451,4
-2026-10-13,outs,Freddy Peralta,freddy peralta,13.5,0.5393,4
+2026-10-13,ks,Parker Messick,parker messick,4.5,0.48,6
+2026-10-13,ks,Blake Snell,blake snell,6.5,0.4244,4
+2026-10-13,outs,Blake Snell,blake snell,14.5,0.5743,2
+2026-10-13,outs,Parker Messick,parker messick,14.5,0.5552,4
+2026-10-13,outs,Freddy Peralta,freddy peralta,13.5,0.5438,3
 2026-10-13,outs,Robert Gasser,robert gasser,11.5,0.5385,3
