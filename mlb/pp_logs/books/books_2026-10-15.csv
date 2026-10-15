@@ -1,5 +1,9 @@
 date,stat,pitcher,name,book_line,book_p_over,n_books
-2026-10-15,hits,Tyler Glasnow,tyler glasnow,3.5,0.5039,3
-2026-10-15,ks,Tyler Glasnow,tyler glasnow,5.5,0.5777,6
-2026-10-15,outs,Tyler Glasnow,tyler glasnow,14.5,0.5593,4
-2026-10-15,outs,Shane Drohan,shane drohan,8.5,0.4853,1
+2026-10-15,hits,Tyler Glasnow,tyler glasnow,3.5,0.501,3
+2026-10-15,hits,Nick Martinez,nick martinez,3.5,0.435,2
+2026-10-15,ks,Tyler Glasnow,tyler glasnow,6.5,0.4443,3
+2026-10-15,ks,Nick Martinez,nick martinez,2.5,0.4274,1
+2026-10-15,ks,Shane Drohan,shane drohan,2.5,0.4127,3
+2026-10-15,outs,Tyler Glasnow,tyler glasnow,14.5,0.5653,3
+2026-10-15,outs,Nick Martinez,nick martinez,11.5,0.5487,2
+2026-10-15,outs,Shane Drohan,shane drohan,7.5,0.5269,2
