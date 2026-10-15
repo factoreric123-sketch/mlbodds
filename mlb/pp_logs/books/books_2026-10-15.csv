@@ -1,10 +1,8 @@
 date,stat,pitcher,name,book_line,book_p_over,n_books
-2026-10-15,hits,Gavin Williams,gavin williams,3.5,0.5729,3
-2026-10-15,hits,Tyler Glasnow,tyler glasnow,3.5,0.5147,3
-2026-10-15,hits,Griffin Jax,griffin jax,3.5,0.4165,3
-2026-10-15,ks,Tyler Glasnow,tyler glasnow,5.5,0.5667,5
-2026-10-15,ks,Griffin Jax,griffin jax,3.5,0.4979,6
-2026-10-15,ks,Gavin Williams,gavin williams,6.5,0.4797,6
-2026-10-15,outs,Tyler Glasnow,tyler glasnow,14.5,0.5396,4
-2026-10-15,outs,Griffin Jax,griffin jax,11.5,0.5347,4
-2026-10-15,outs,Gavin Williams,gavin williams,16.5,0.4765,3
+2026-10-15,hits,Tyler Glasnow,tyler glasnow,3.5,0.5246,3
+2026-10-15,hits,Gavin Williams,gavin williams,2.5,0.396,1
+2026-10-15,ks,Tyler Glasnow,tyler glasnow,5.5,0.5752,5
+2026-10-15,ks,Gavin Williams,gavin williams,9.5,0.4335,1
+2026-10-15,outs,Tyler Glasnow,tyler glasnow,14.5,0.5395,4
+2026-10-15,outs,Shane Drohan,shane drohan,8.5,0.5101,1
+2026-10-15,outs,Gavin Williams,gavin williams,18.5,0.4754,1
